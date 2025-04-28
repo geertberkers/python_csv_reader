@@ -3,18 +3,17 @@ version: '3.8'
 services:
   postgres:
     image: postgres
-    container_name: postgres-db-people
+    container_name: postgres-db
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: people_database
+      POSTGRES_DB: my_database
     ports:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./init:/docker-entrypoint-initdb.d  # <<< add this line to mount your init scripts
-         
+      - ./init:/docker-entrypoint-initdb.d
 
   pgadmin:
     image: dpage/pgadmin4
@@ -22,11 +21,17 @@ services:
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_PASSWORD_FILE: /run/secrets/pgadmin_password
+      PGADMIN_CONFIG_SERVER_MODE: 'False'  # important to allow preloading
     ports:
       - "5050:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+      - ./servers.json:/pgadmin4/servers.json  # <<< ADD THIS
+      - ./pgadmin_password.txt:/run/secrets/pgadmin_password:ro
     depends_on:
       - postgres
-      
+
 volumes:
   pgdata:
+  pgadmin-data:
