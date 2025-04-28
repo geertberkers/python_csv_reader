@@ -1,7 +1,7 @@
 Here's the plan:
-Pick a database (let’s use SQLite first — it's super easy, no server setup needed).
+Pick a database (letâ€™s use SQLite first â€” it's super easy, no server setup needed).
 
-Pick a CSV file (you can use any CSV — if you don't have one, I'll suggest a sample).
+Pick a CSV file (you can use any CSV â€” if you don't have one, I'll suggest a sample).
 
 Write a Python script to:
 
@@ -18,7 +18,7 @@ After logging in:
 
 Click "Add New Server".
 
-In the General tab → Give it any name (e.g., MyDatabase).
+In the General tab â†’ Give it any name (e.g., MyDatabase).
 
 In the Connection tab:
 
@@ -29,3 +29,25 @@ Port: 5432
 Username: postgres
 
 Password: password
+
+
+
+# Extra database Folder Structure
+postgres-docker/
+├── docker-compose.yml
+└── init/
+    └── create_second_db.sql
+
+
+docker-compose down -v
+docker-compose up -d
+
+
+# Note: Failing Netflix data:
+
+"Squid Game: The Challenge: Seizoen 1: Red Light, Green Light","4/26/25"
+"Cheat: Seizoen 1: Scumbags, The Lot Of 'Em","4/26/25"
+"Inside: Seizoen 2: Fresh Meat, Fresh Money","4/26/25"
+This , in the name are seen as divider,,,
+
+Solved by changing code!

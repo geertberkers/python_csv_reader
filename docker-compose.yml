@@ -13,6 +13,8 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d  # <<< add this line to mount your init scripts
+         
 
   pgadmin:
     image: dpage/pgadmin4
