@@ -12,13 +12,15 @@ from pymongo import MongoClient
 client = MongoClient('mongodb+srv://user:password@cluster0.iv2js6b.mongodb.net')  # Default URI, change if needed
 
 # 2. Select your database
-db = client['people_database']
+db = client['databases']
 
 # 3. Choose your collection (MongoDB's version of a table)
 collection = db['people']
+#collection = db['netflix']
 
 # 4. Load the CSV data into a DataFrame
 csv_file = 'people.csv'
+#csv_file = 'netflix.csv'
 df = pd.read_csv(csv_file)
 
 # 5. Convert the DataFrame to a dictionary list (to insert into MongoDB)
