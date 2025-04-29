@@ -9,8 +9,8 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # 1. Load the CSV
-csv_file = 'people.csv'
-csv_file = 'afschrijvingen.csv'
+csv_file = '../csv/people.csv'
+#csv_file = '../csv/afschrijvingen.csv'
 df = pd.read_csv(csv_file)
 
 # 2. Define the PostgreSQL connection string
@@ -35,8 +35,8 @@ connection_string = f'postgresql://{user}:{password}@{host}:{port}/{database}'
 engine = create_engine(connection_string)
 
 # 4. Write the DataFrame into a PostgreSQL table
-#df.to_sql('people', con=engine, if_exists='replace', index=False)
-df.to_sql('afschrijvingen', con=engine, if_exists='replace', index=False)
+df.to_sql('people', con=engine, if_exists='replace', index=False)
+#df.to_sql('afschrijvingen', con=engine, if_exists='replace', index=False)
 
 print("CSV data has been loaded into PostgreSQL!")
 
