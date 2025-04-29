@@ -1,13 +1,59 @@
 Title,Beschrijving,Date_from,Date_until
 Kotlin,Taal,2014,
 Swift,Taal,2018,
-Java,Taal, 2014, 2018
+Java,Taal,2014, 2018
+C#,Taal,2014,2016
+Python,Taal,2020,
 
-"Netbeans",IDE,,
+
+
+GoogleFirebase,Cloud Platform, 2018,
+Microsoft Azure,Cloud Platform, 2018,
+Google Cloud Platform,Cloud Platform, 2018,
+Amazon Web Services,Cloud Platform, 2018,
+
+Netbeans,IDE,,
 IntelliJ,IDE,2018,2014
 XCode,IDE,2018,2024
+Visual Studio (Code),IDE,2014
+Spyder,IDE, 2018
 
 Django,Python WebFramework, 2024,
 Kitura,Swift WebFramework, 2014,2018
 Ktor,Kotlin WebFramwork,2020,
-SpringBoot, Java WebFramework,2022,2024
+SpringBoot,Java WebFramework,2022,2024
+
+Angular,FrontEnd,,
+
+HTML,Markup Language,2014
+CSS,Markup Language,2014
+XML,Markup Language,2014,
+JSON,Markup Language,2014,
+YAML,Markup Language,2014,
+
+PostgreSQL,Databases,2014,
+MongoDB,Databases,2014,
+Realm,Databases,2014,
+MySQL,Databases,2014,
+SQLite,Databases,2014,
+Android Room,Databases,2014,
+
+Linux,OperationSystem,2018
+MacOS,OperationSystem,2018
+Windows,OperationSystem,1995
+
+
+Github Actions,CI/CD,2024
+Azure pipeline,CI/CD,2024
+
+Waterval,Ontwikkelmethode,2014,
+Agile,Ontwikkelmethode,2014,
+
+
+OOP,Ontwikkelconcepten,2014,
+Reactive,Ontwikkelconcepten,2014,
+DataDriven,Ontwikkelconcepten,2014,
+TestDriven,Ontwikkelconcepten,2014,
+SingleRespon,Ontwikkelconcepten,2014,
+Open/Closed,Ontwikkelconcepten,2014,
+Abstractie&Isolation,Ontwikkelconcepten,2014,
