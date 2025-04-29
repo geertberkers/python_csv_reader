@@ -28,7 +28,7 @@ print("port:", port)
 print("database:", database)
 
 # 1. Load the CSV
-csv_file = '../csv/people.csv'
+csv_file = '../csv/development.csv'
 #csv_file = '../csv/afschrijvingen.csv'
 df = pd.read_csv(csv_file)
 
@@ -41,7 +41,7 @@ connection_string = f'postgresql://{user}:{password}@{host}:{port}/{database}'
 engine = create_engine(connection_string)
 
 # 4. Write the DataFrame into a PostgreSQL table
-df.to_sql('people', con=engine, if_exists='replace', index=False)
+df.to_sql('development', con=engine, if_exists='replace', index=False)
 #df.to_sql('afschrijvingen', con=engine, if_exists='replace', index=False)
 
 print("CSV data has been loaded into PostgreSQL!")

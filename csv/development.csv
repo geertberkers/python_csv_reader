@@ -1,0 +1,13 @@
+Title,Beschrijving,Date_from,Date_until
+Kotlin,Taal,2014,
+Swift,Taal,2018,
+Java,Taal, 2014, 2018
+
+"Netbeans",IDE,,
+IntelliJ,IDE,2018,2014
+XCode,IDE,2018,2024
+
+Django,Python WebFramework, 2024,
+Kitura,Swift WebFramework, 2014,2018
+Ktor,Kotlin WebFramwork,2020,
+SpringBoot, Java WebFramework,2022,2024
