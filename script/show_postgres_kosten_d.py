@@ -7,9 +7,32 @@ Created on Mon Apr 28 23:15:19 2025
 
 import pandas as pd
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
+import os
 
-# Create the engine
-engine = create_engine('postgresql://postgres:password@localhost:5432/afschrijvingen_database')
+load_dotenv(dotenv_path="../.env", override=True)
+load_dotenv(dotenv_path="../prod.env", override=True)
+
+# Access them using os.environ
+user = os.getenv("user")
+password = os.getenv("password")
+host = os.getenv("host")
+port = os.getenv("port")
+database = os.getenv("database")
+
+print("Reading env file:")
+print("User:", user)
+print("Password:", password)
+print("Host:", host)
+print("port:", port)
+print("database:", database)
+
+
+# 3. Create the engine
+# Format: 'postgresql://username:password@host:port/database'
+connection_string = f'postgresql://{user}:{password}@{host}:{port}/{database}'
+engine = create_engine(connection_string)
+
 
 # Read the table into a DataFrame
 sql_statement = '''
