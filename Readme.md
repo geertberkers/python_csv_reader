@@ -6,12 +6,12 @@
 
 # Plan reading CSV
 Here's the plan:
-Pick a database (letâ€™s use SQLite first â€” it's super easy, no server setup needed).
-Pick a CSV file (you can use any CSV â€” if you don't have one, I'll suggest a sample).
-Write a Python script to:
-Read the CSV
-Create a database table
-Insert the data.
+1. Pick a database (lets use SQLite first as it's super easy, no server setup needed).
+2. Pick a CSV file (you can use any CSV as if you don't have one, I'll suggest a sample).
+3. Write a Python script to:
+- Read the CSV
+- Create a database table
+- Insert the data.
 
 
 # Connect pgAdmin
@@ -52,9 +52,33 @@ Run Docker:
 
 # Run PSQL from docker:
 `docker run -it --rm postgres psql -h <host> -U <user> -d <database>`
+Example to check if data is loaded
+
+```
+PS C:\Users\geert\python_csv_reader> docker run -it --rm postgres psql -h 91.99.8.239 -U user -d database
+Password for user user:
+psql (17.4 (Debian 17.4-1.pgdg120+2), server 16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, compression: off, ALPN: none)
+Type "help" for help.
+
+database=> \c database
+psql (17.4 (Debian 17.4-1.pgdg120+2), server 16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, compression: off, ALPN: none)
+You are now connected to database "kosten" as user "geert".
+database=> \dt
+            List of relations
+ Schema |      Name      | Type  | Owner
+--------+----------------+-------+-------
+ public | afschrijvingen | table | geert
+(1 row)
+
+database=> SELECT * FROM afschrijvingen;
+database=>
 
 
-# Note: Failing Netflix data:
+```
+
+# Note: Failing Netflix data because , is in the Title:
 ```
 "Squid Game: The Challenge: Seizoen 1: Red Light, Green Light","4/26/25"
 "Cheat: Seizoen 1: Scumbags, The Lot Of 'Em","4/26/25"
