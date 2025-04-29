@@ -1,0 +1,19 @@
+id,afschrijving,beschrijving,bedrag,datum
+1,Alllianz Direct,hypotheek,1000,1e
+2,Broekhuis Lease,auto lease,500,1e
+3,Svn Nederland, Starterslening, 300,1e
+4,CZ, Zorgverzekering, 250, 1e
+5,Scildon, Pensioen verzekering, 250, 1e
+6,Gemeente,Belasteling, 180,28e
+7,DUO, Studiefinanciering,175,25e
+8,ZLM, Verzekeringen, 120, 26e
+9,Ziggo, Internet, 83, 20e
+10,CZ,eigen risico,38.50, 1e
+11,EnergieDirect, Energie, 125,1e
+12,Random, Test,21,23e
+13,Water, Water, 21,1e
+14,Netflix, Netflix, 23,21e
+15,Telefoon, Telefoon, 25,23e
+16,Abbonnement, Kosten, 5,1e
+17,Spotify, Spotify, 15,1e
+18,Tijdschrift, ComputerTotaal,8.25,21e
