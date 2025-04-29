@@ -8,6 +8,8 @@ import pandas as pd
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
 import os
+import psycopg2
+from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
 load_dotenv(dotenv_path="../.env", override=True)
 #load_dotenv(dotenv_path="../prod.env", override=True)
@@ -60,23 +62,15 @@ lines = [
     "ZGTRADEPRODUCT.csv",
     "ZWCIATABLE25BTEXTCATEGORY.csv",
     "ZGNAME.csv",
-
+    "ZINTAKEHISTORYITEM.csv",
+    "ZWCIATABLE25TEXTLINK.csv",
 ]
-
-# Define the function
-def printname(filename):
-    #print('Handling file:', filename)
-    save_csv_db(filename)    
-    #print('Finished handling file:', filename)
-    print('')
-          
          
             
          
 def save_csv_db(csv_file):
     # Remove .csv extension for use as table name
     db_name = os.path.splitext(os.path.basename(csv_file))[0]
-    #print(db_name)
     
     try:
         df = pd.read_csv(csv_file)
@@ -88,7 +82,7 @@ def save_csv_db(csv_file):
         return
 
     df = pd.read_csv(csv_file)
-    print(df) # Show DataFrame in Terminal output
+    #print(df) # Show DataFrame in Terminal output
     
     
     # 2. Define the PostgreSQL connection string
@@ -103,8 +97,37 @@ def save_csv_db(csv_file):
     print(f"CSV data - '{db_name}' -  has been loaded into PostgreSQL!")
     
     
+
+
+def ensure_database_exists(db_name, user, password, host, port):
+    try:
+        # Connect to the default database
+        conn = psycopg2.connect(
+            dbname='postgres', user=user, password=password, host=host, port=port
+        )
+        conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+        cursor = conn.cursor()
+
+        # Check if the database exists
+        cursor.execute("SELECT 1 FROM pg_database WHERE datname = %s", (db_name,))
+        exists = cursor.fetchone()
+
+        if not exists:
+            cursor.execute(f"CREATE DATABASE {db_name}")
+            print(f"Database '{db_name}' created.")
+        else:
+            print(f"Database '{db_name}' already exists.")
+
+        cursor.close()
+        conn.close()
+    except Exception as e:
+        print("Error checking/creating database:", e)    
     
+    
+    
+# Ensure the target database exists
+ensure_database_exists(database, user, password, host, port)
     
 # Apply function to each item in the list
 for line in lines:
-    printname('../csv/gstandaard/' + line)
+    save_csv_db('../csv/gstandaard/' + line)
