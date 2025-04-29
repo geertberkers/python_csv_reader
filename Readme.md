@@ -50,6 +50,10 @@ Run Docker:
 `docker-compose up -d`
 
 
+# Run PSQL from docker:
+`docker run -it --rm postgres psql -h <host> -U <user> -d <database>`
+
+
 # Note: Failing Netflix data:
 ```
 "Squid Game: The Challenge: Seizoen 1: Red Light, Green Light","4/26/25"
