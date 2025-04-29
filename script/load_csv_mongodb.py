@@ -19,7 +19,7 @@ collection = db['people']
 #collection = db['netflix']
 
 # 4. Load the CSV data into a DataFrame
-csv_file = 'people.csv'
+csv_file = '../csv/people.csv'
 #csv_file = 'netflix.csv'
 df = pd.read_csv(csv_file)
 

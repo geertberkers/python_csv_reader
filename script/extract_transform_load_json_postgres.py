@@ -10,7 +10,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # 1. Load the raw JSON data
-with open('raw_patient.json') as f:
+with open('../json/raw_patient.json') as f:
     data = json.load(f)
 # Normally you load from a file or API, here we simulate it:
 #raw_json = '''

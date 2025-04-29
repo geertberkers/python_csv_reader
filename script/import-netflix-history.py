@@ -31,7 +31,7 @@ conn.commit()
 
 # 2. Load the CSV
 # 2. Load the CSV properly with COPY ... CSV HEADER
-with open('Netflix.csv', 'r', encoding='utf-8') as f:
+with open('../csv/Netflix.csv', 'r', encoding='utf-8') as f:
     cur.copy_expert("""
         COPY netflix(title, date)
         FROM STDIN
