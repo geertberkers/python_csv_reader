@@ -14,6 +14,13 @@ Here's the plan:
 - Insert the data.
 
 
+# ENV Files
+For security reasons, production environment variables are not shared in this project.
+An `.env` file is created to read values from.
+Add `prod.env` to add production values.
+This file is added in gitignore so not commited
+
+
 # Connect pgAdmin
 In pgAdmin, Connect to Your Postgres Server
 
