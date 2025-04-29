@@ -1,2 +1,3 @@
 pip install pandas sqlalchemy
 pip install pymongo
+pip install python-dotenv

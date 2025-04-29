@@ -1,3 +1,4 @@
 postgres_dump.sql
 GStandaard.sqlite
 csv/afschrijvingen_geert.csv
+prod.env

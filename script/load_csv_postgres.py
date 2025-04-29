@@ -7,6 +7,25 @@ Created on Mon Apr 28 22:33:14 2025
 
 import pandas as pd
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
+import os
+
+load_dotenv(dotenv_path="../.env", override=True)
+#load_dotenv(dotenv_path="../prod.env", override=True)
+
+# Access them using os.environ
+user = os.getenv("user")
+password = os.getenv("password")
+host = os.getenv("host")
+port = os.getenv("port")
+database = os.getenv("database")
+
+print("Reading env file:")
+print("User:", user)
+print("Password:", password)
+print("Host:", host)
+print("port:", port)
+print("database:", database)
 
 # 1. Load the CSV
 csv_file = '../csv/people.csv'
@@ -14,19 +33,6 @@ csv_file = '../csv/people.csv'
 df = pd.read_csv(csv_file)
 
 # 2. Define the PostgreSQL connection string
-user = 'postgres'
-password = 'password'
-host = 'localhost'
-port = '5432'
-database = 'afschrijvingen_database'
-
-#user = 'postgres'
-#password = 'password'
-#host = 'localhost'
-#port = '5432'
-#database = 'postgres'
-
-
 
 # Format: 'postgresql://username:password@host:port/database'
 connection_string = f'postgresql://{user}:{password}@{host}:{port}/{database}'
