@@ -1,7 +1,18 @@
-/*
-SELECT SUM(bedrag) AS total_bedrag
-FROM public.afschrijvingen;
-*/
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr 28 23:15:19 2025
+
+@author: geert
+"""
+
+import pandas as pd
+from sqlalchemy import create_engine
+
+# Create the engine
+engine = create_engine('postgresql://postgres:password@localhost:5432/afschrijvingen_database')
+
+# Read the table into a DataFrame
+sql_statement = '''
 SELECT *
 FROM (
     SELECT 
@@ -20,19 +31,8 @@ FROM (
     FROM public.afschrijvingen
 ) AS combined
 ORDER BY sort_order, bedrag DESC, datum;
+'''
+df = pd.read_sql(sql_statement, con=engine)
 
-/*
-SELECT id, afschrijving, beschrijving, bedrag, datum, rekening
-FROM public.afschrijvingen
-
-UNION ALL
-
-SELECT 
-    NULL AS id, 
-    NULL AS afschrijving, 
-    'TOTAAL' AS beschrijving, 
-    SUM(bedrag) AS bedrag, 
-    NULL AS datum, 
-    NULL AS rekening
-FROM public.afschrijvingen;
-*/
+# Display
+print(df)

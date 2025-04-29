@@ -12,7 +12,8 @@ from sqlalchemy import create_engine
 engine = create_engine('postgresql://postgres:password@localhost:5432/people_database')
 
 # Read the table into a DataFrame
-df = pd.read_sql('SELECT * FROM people;', con=engine)
+sql_statement = 'SELECT * FROM people;'
+df = pd.read_sql(sql_statement, con=engine)
 
 # Display
 print(df)
