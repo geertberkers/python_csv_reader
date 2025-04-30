@@ -1,0 +1,2 @@
+id,date,time,pomp,brandstof,volume,prijs,total_price,discount,total,btw_percentag,btw,netto,station,station_naam,station_adress_station_postcode
+1,29-04-2025,21:53:45,Pomp 2,EURO 95,8.67L,1.849,16.03,-0.17,15.86,21%,2.75,13.11,8516,Tango Someren,Witvrouwenbergweg 15,5711 CN Someren
