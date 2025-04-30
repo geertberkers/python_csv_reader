@@ -1,3 +1,10 @@
+# Ignore all __pycache__ folders and their contents
+__pycache__/
+
+# Ignore all .pyc files
+*.pyc
+
+
 postgres_dump.sql
 GStandaard.sqlite
 csv/afschrijvingen_geert.csv
