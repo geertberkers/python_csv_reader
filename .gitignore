@@ -4,3 +4,4 @@ csv/afschrijvingen_geert.csv
 prod.env
 *.pyc
 /csv/gstandaard
+csv/vacatures_geert.csv

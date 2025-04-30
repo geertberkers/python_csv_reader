@@ -66,3 +66,7 @@ Laptop,Personal Device,2012,
 PC,Personal Device,2000,
 Telefoon,Personal Device,2005,
 Raspberry Pi,Personal Device,2016
+
+Coroutine,AndroidConcept,2020,
+Dao,AndroidConcept,2020,
+Repository,AndroidConcept,2020,
