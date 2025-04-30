@@ -5,7 +5,7 @@ Created on Wed Apr 30 16:18:18 2025
 @author: geert
 """
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import psycopg2
 from dotenv import load_dotenv
 import os
@@ -50,7 +50,8 @@ def indexGrid():
 def get_data():
     query = "SELECT * FROM public.development"
     try:
-        conn = psycopg2.connect(**DB_PARAMS)
+        #conn = psycopg2.connect(**DB_PARAMS)
+        conn = psycopg2.connect(connection_string)
         cur = conn.cursor()
         cur.execute(query)
         headers = [desc[0] for desc in cur.description]

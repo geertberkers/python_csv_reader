@@ -18,6 +18,11 @@ Here's the plan:
 - Probably need another script for this.
 - Than colums can be refernced so that tables can be linked. 
 
+
+# Show data examples:
+- http://localhost:5000/ - Run your own select statement
+- http://localhost:5000/aggrid - Show data in AGGrid table
+
 # ENV Files
 - For security reasons, production environment variables are not shared in this project.
 - An `.env` file is created to read values from.
