@@ -43,6 +43,10 @@ MacOS,OperationSystem,2018
 Windows,OperationSystem,1995
 
 
+Kubernetes,DeploymentStrategy,2014
+Docker,DeploymentStrategy,2014
+Nginx,DeploymentStrategy,2014
+
 Github Actions,CI/CD,2024
 Azure pipeline,CI/CD,2024
 
@@ -57,3 +61,8 @@ TestDriven,Ontwikkelconcepten,2014,
 SingleRespon,Ontwikkelconcepten,2014,
 Open/Closed,Ontwikkelconcepten,2014,
 Abstractie&Isolation,Ontwikkelconcepten,2014,
+
+Laptop,Personal Device,2012,
+PC,Personal Device,2000,
+Telefoon,Personal Device,2005,
+Raspberry Pi,Personal Device,2016
