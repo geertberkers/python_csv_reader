@@ -44,9 +44,8 @@
             const columnDefs = reordered.map(key => ({
                 field: key,
                 editable: key !== 'id',
-                sort: key === 'Title' ? 'asc' : undefined
             }));
-            
+
             gridOptions = {
                 columnDefs: columnDefs,
                 rowData: data,
