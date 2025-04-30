@@ -13,6 +13,10 @@ Here's the plan:
 - Create a database table
 - Insert the data.
 
+# TODO:
+- Make sure a way is added to add PRIMARY KEY to tables.ALPN
+- Probably need another script for this.
+- Than colums can be refernced so that tables can be linked. 
 
 # ENV Files
 - For security reasons, production environment variables are not shared in this project.
