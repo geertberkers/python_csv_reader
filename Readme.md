@@ -20,6 +20,7 @@ Here's the plan:
 
 
 # Show data examples:
+- http://localhost:5050/ - pgAdmin
 - http://localhost:5000/ - Run your own select statement
 - http://localhost:5000/aggrid - Show data in AGGrid table
 
