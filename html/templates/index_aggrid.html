@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AG Grid with Flask</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-grid.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community/styles/ag-theme-alpine.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .ag-theme-alpine {
+            height: 90vh;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">PostgreSQL Table: development</h2>
+    <div id="myGrid" class="ag-theme-alpine"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@29.0.0/dist/ag-grid-community.min.noStyle.js"></script>
+ 
+    <script>
+        async function loadData() {
+            const response = await fetch('/data');
+            const data = await response.json();
+
+            if (data.error) {
+                document.body.innerHTML = `<p style="color:red;">Error: ${data.error}</p>`;
+                return;
+            }
+
+            const columnDefs = Object.keys(data[0] || {}).map(key => ({ field: key }));
+
+            const gridOptions = {
+                columnDefs: columnDefs,
+                rowData: data,
+                pagination: true,
+                sortable: true,
+                filter: true,
+                resizable: true
+            };
+
+            new agGrid.Grid(document.getElementById('myGrid'), gridOptions);
+        }
+
+        loadData();
+    </script>
+</body>
+</html>
